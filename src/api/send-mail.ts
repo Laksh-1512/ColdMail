@@ -9,9 +9,6 @@ const app=new Hono();
 app.post('/send-mail',async(c)=>{
     const {emails,password}= await c.req.json();
     if(!emails||!password) return c.json({err:"email and pass required"});
-    // console.log(password);
-    // console.log(process.env.password);
-    // console.log(process.env.mongo_url);
     if(password !== process.env.password) return c.json({err:"invalid password"});
 
     const trackingId=uuid();

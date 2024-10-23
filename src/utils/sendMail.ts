@@ -19,6 +19,6 @@ export const sendMail = async(emails:string[],trackindId:string)=>{
             style="display:none;" />
             `,
     };
-    console.log(process.env.email);
+    // console.log(process.env.email);
     await transporter.sendMail(mailOptions);
 }
